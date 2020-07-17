@@ -8,10 +8,9 @@ import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 
 public class jsonThings {
-    public String startProcess() throws URISyntaxException {
+    public String startProcess() {
         String relativePath = "MainFolder" + File.separator + "SubFolder" + File.separator + "LastLevel" + File.separator + "Sample.json";
         InputStream stream = getClass().getClassLoader().getResourceAsStream(relativePath);
-        String fileContents = IOUtils.toString(stream, StandardCharsets.UTF_8);
-        return fileContents;
+        return IOUtils.toString(stream, StandardCharsets.UTF_8);
     }
 }
